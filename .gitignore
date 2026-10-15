@@ -1,0 +1,8 @@
+node_modules
+dist
+.env.local
+.env
+*.log
+.env.shop
+dist-shop
+backups

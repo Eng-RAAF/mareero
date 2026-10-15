@@ -1,0 +1,42 @@
+{
+  "name": "mareero-auto-spare-parts",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mareero Auto Spare Parts Management System — multi-branch, multi-store inventory, purchasing, sales and accounting (no POS).",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:backend dev:frontend",
+    "dev:frontend": "vite",
+    "dev:backend": "convex dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "convex deploy --cmd \"npm run build\"",
+    "setup:auth": "npx @convex-dev/auth",
+    "wipe": "convex run admin:wipeAllData \"{\\\"confirm\\\":\\\"DELETE EVERYTHING\\\"}\"",
+    "shop:setup": "node scripts/shop-server.mjs setup",
+    "shop:start": "node scripts/shop-server.mjs start",
+    "shop:stop": "node scripts/shop-server.mjs stop",
+    "shop:update": "node scripts/shop-server.mjs update",
+    "shop:backup": "node scripts/shop-server.mjs backup",
+    "shop:import": "node scripts/shop-server.mjs import"
+  },
+  "dependencies": {
+    "@auth/core": "^0.37.0",
+    "@convex-dev/auth": "^0.0.90",
+    "convex": "^1.27.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

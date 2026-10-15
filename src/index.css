@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: Inter, "Segoe UI", system-ui, sans-serif; }
+  body { @apply bg-ink-50 text-ink-800 antialiased; }
+  input[type="number"]::-webkit-inner-spin-button { opacity: 0.4; }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-md border border-ink-300 bg-white px-3 py-2 text-sm text-ink-800 shadow-sm
+      placeholder:text-ink-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20
+      disabled:bg-ink-100 disabled:text-ink-500;
+  }
+  .input-sm { @apply px-2 py-1.5 text-sm; }
+  .label { @apply mb-1 block text-xs font-medium uppercase tracking-wide text-ink-500; }
+  .card { @apply rounded-lg border border-ink-200 bg-white shadow-sm; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-3.5 py-2 text-sm font-medium
+      transition focus:outline-none focus:ring-2 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700 focus:ring-brand-600; }
+  .btn-secondary { @apply btn border border-ink-300 bg-white text-ink-700 hover:bg-ink-50 focus:ring-ink-300; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-600; }
+  .btn-ghost { @apply btn text-ink-600 hover:bg-ink-100 focus:ring-ink-200; }
+  .btn-sm { @apply px-2.5 py-1 text-xs; }
+  .table { @apply w-full border-collapse text-sm; }
+  .table th {
+    @apply sticky top-0 z-[1] border-b border-ink-200 bg-ink-50 px-3 py-2 text-left text-xs font-semibold uppercase
+      tracking-wide text-ink-500;
+  }
+  .table td { @apply border-b border-ink-100 px-3 py-2 align-top; }
+  .table tbody tr:hover { @apply bg-brand-50/40; }
+  .num { @apply text-right tabular-nums; }
+  .link { @apply font-medium text-brand-700 hover:underline; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}

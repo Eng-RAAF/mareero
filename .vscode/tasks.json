@@ -1,0 +1,23 @@
+{
+  // Run with Terminal → Run Task… (or Ctrl+Shift+P → "Tasks: Run Task")
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Mareero: start (backend + web app)",
+      "type": "npm",
+      "script": "dev",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true }
+    },
+    { "label": "Mareero: web app only", "type": "npm", "script": "dev:frontend", "isBackground": true, "problemMatcher": [] },
+    { "label": "Mareero: build", "type": "npm", "script": "build", "problemMatcher": [] },
+    { "label": "Mareero: preview build (test install/offline)", "type": "npm", "script": "preview", "isBackground": true, "problemMatcher": [] },
+    { "label": "Mareero: deploy to production", "type": "npm", "script": "deploy", "problemMatcher": [] },
+    { "label": "Shop server: setup", "type": "npm", "script": "shop:setup", "problemMatcher": [] },
+    { "label": "Shop server: start", "type": "npm", "script": "shop:start", "problemMatcher": [] },
+    { "label": "Shop server: stop", "type": "npm", "script": "shop:stop", "problemMatcher": [] },
+    { "label": "Shop server: update", "type": "npm", "script": "shop:update", "problemMatcher": [] },
+    { "label": "Shop server: backup", "type": "npm", "script": "shop:backup", "problemMatcher": [] }
+  ]
+}
